@@ -1,0 +1,4 @@
+master_thesis_tail_wind/plots
+master_thesis_tail_wind/pp_forecasts
+distributionalnn/Datasets/forecasts/normal_idr/LOG_PROB/seed_10/paper/forecast_test.csv
+distributionalnn/Datasets/forecasts/point_idr/MAE/seed_10/paper/forecast_test.csv
