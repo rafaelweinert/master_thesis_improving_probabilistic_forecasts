@@ -27,5 +27,6 @@ The code used to train and test the models is in the folder "Neural_Networks". S
 
 
 General notes:
-The requirements.txt file contains the packages that were used for the python files. Note, that the isodisreg package must be downloaded at https://github.com/evwalz/isodisreg 
+The requirements.txt file contains the packages that were used for the python files. Note, that the isodisreg package must be downloaded at https://github.com/evwalz/isodisreg and installed manually first.
+
 Moreover, the python version used is 3.9.21 (higher versions of python are not compatible with the version of tensorflow, and higher versions of tensorflow are not compatible with the code, so make sure to have the correct versions installed!)
