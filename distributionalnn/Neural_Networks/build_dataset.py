@@ -1,4 +1,8 @@
 #%% 
+
+# not relevant for the thesis, but useful to have
+
+
 import yfinance as yf
 import pandas as pd
 import time

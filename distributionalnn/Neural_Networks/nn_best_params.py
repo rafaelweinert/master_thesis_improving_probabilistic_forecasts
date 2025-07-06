@@ -1,6 +1,6 @@
 # %% 
 import os
-os.chdir(r"C:\Users\rafaelweinert\PycharmProjects\Master_Thesis_Code\distributionalnn")
+os.chdir(r"C:\Users\rafaelweinert\PycharmProjects\Master_Thesis_Final_Code\distributionalnn") #change to project directory
 print(os.getcwd())
 import pandas as pd
 import numpy as np
@@ -35,6 +35,9 @@ print("Num GPUs Available:", len(tf.config.list_physical_devices('GPU')))
 
 #%% settings
 
+# when running the script, either select 'LOG_PROB' and 'Normal' or 'JSU',
+# or 'MAE' and 'Point' 
+
 losses = [
     # 'wCRPS',
     # 'wCRPS_negative_price',
@@ -47,7 +50,7 @@ losses = [
     # 'MAE',
     ]
 distributions = [
-    'Point',
+    # 'Point',
     'Normal', 
     'JSU', 
     # 'Logistic',
@@ -84,7 +87,7 @@ include_difference = False
 transform_y = False
 sin_cos_week = False
 
-IDR = True
+IDR = True # True for IDR postprocessing, False for no postprocessing
 
 all_params = json.load(open('Datasets/trial_params/params.json', 'r'))
 for seed in seeds:
@@ -167,7 +170,7 @@ for seed in seeds:
                                     
                                     lr_callback = None
                                     if distribution == 'Gumbel':               
-                                        params['learning_rate'] = 0.00001 #FIX
+                                        params['learning_rate'] = 0.00001
                                         
                                     def step_decay(epoch):
                                         drop_rate = 0.95  # Reduce by 5%
@@ -175,10 +178,10 @@ for seed in seeds:
                                         lr = tf.keras.backend.get_value(model.optimizer.lr)  # Get current LR
                                         new_lr = lr * drop_rate if (epoch + 1) % epochs_drop == 0 else lr
                                         print(f"Epoch {epoch+1}: Learning rate = {new_lr:.6f}")
-                                        return tf.math.maximum(new_lr, params['learning_rate']) #FIX
+                                        return tf.math.maximum(new_lr, params['learning_rate'])
                                     lr_callback = tf.keras.callbacks.LearningRateScheduler(step_decay)
                                     
-                                    model.fit(X_train, Y_train, validation_data=(X_val, Y_val), epochs=1500, batch_size=32, verbose=False, callbacks=callbacks) #FIX change back to epochs 1500, lr_callback, [callbacks, BatchProgressLogger(update_freq=100)]
+                                    model.fit(X_train, Y_train, validation_data=(X_val, Y_val), epochs=1500, batch_size=32, verbose=False, callbacks=callbacks)
                                 
                                     if IDR:
                                         train_dist = model(X_train)                                        

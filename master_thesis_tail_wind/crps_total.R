@@ -1,3 +1,5 @@
+# this script is only used for creating the tables for the paper.
+
 library(dplyr)
 library(purrr)
 setwd("C:/Users/rafaelweinert/PycharmProjects/Master_Thesis_Code/master_thesis_tail_wind")

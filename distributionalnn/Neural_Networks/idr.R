@@ -7,7 +7,7 @@ library(ggplot2)
 library(gridExtra)
 library(scoringRules)
 
-setwd("C:/Users/rafaelweinert/PycharmProjects/Master_Thesis_Code/distributionalnn")
+setwd("C:/Users/rafaelweinert/PycharmProjects/Master_Thesis_Code/distributionalnn") # change to project directory
 source("Neural_Networks/utils.R")
 
 # %% tail calibration
@@ -29,7 +29,7 @@ F <- function(x, x_vals, cdf_vals) {
     })
 }
 
-loss <- 'MAE'
+loss <- 'MAE' # change to 'LOG_PROB' and 'Normal' or 'JSU' for the other distribution
 distribution <- 'Point'
 seed <- 10
 

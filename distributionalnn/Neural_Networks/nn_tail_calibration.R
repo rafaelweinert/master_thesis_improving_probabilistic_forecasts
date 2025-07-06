@@ -3,7 +3,7 @@
 # remove all objects from the workspace
 rm(list = ls())
 
-setwd("C:/Users/rafaelweinert/PycharmProjects/Master_Thesis_Code/distributionalnn")
+setwd("C:/Users/rafaelweinert/PycharmProjects/Master_Thesis_Code/distributionalnn") # change to project directory
 
 library(dplyr)
 library(crch)
@@ -25,7 +25,7 @@ dev.new()
 #%%
 source("Neural_Networks/utils.R")
 
-path_prefix <- "C:/Users/rafaelweinert/PycharmProjects/Master_Thesis_Code/distributionalnn/Datasets/forecasts/"
+path_prefix <- "C:/Users/rafaelweinert/PycharmProjects/Master_Thesis_Code/distributionalnn/Datasets/forecasts/" # Path to the forecasts
 
 
 calculate_crps <- TRUE

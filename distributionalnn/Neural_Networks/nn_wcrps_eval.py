@@ -1,5 +1,7 @@
 #%%
 
+# This script is only for creating the tables for the paper.
+
 import pandas as pd
 import numpy as np
 
